@@ -8,11 +8,12 @@
   <meta name="theme-color" content="#102d40">
   <title>Vår arbetsplats framåt · Medarbetarenkät 2026</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23102d40'/%3E%3Cpath d='M16 45V30h8v15zm12 0V20h8v25zm12 0V12h8v33z' fill='%236ae0c3'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <script src="data.js" defer></script>
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=2.0.0">
+  <script src="data.js?v=2.0.0" defer></script>
+  <script src="actions.js?v=2.0.0" defer></script>
+  <script src="app.js?v=2.0.0" defer></script>
 </head>
-<body data-version="1.0.0">
+<body data-version="2.0.0">
   <a class="skip-link" href="#main">Hoppa till innehållet</a>
   <header class="site-header">
     <a class="brand" href="#start"><span class="brand-mark" aria-hidden="true">A&i</span><span>Arbete & integration<small>IFO · Bengtsfors kommun</small></span></a>
@@ -27,14 +28,22 @@
     <section class="themes-section" id="teman" aria-labelledby="themes-title">
       <div class="wrap"><div class="section-heading"><div><p class="eyebrow">MEDARBETARNAS FÖRSLAG</p><h2 id="themes-title">Vad lyfter underlaget?</h2></div><p>Förslagen är grupperade i teman för överblick.<br>Temana är en sammanställning, inte beslutade områden.</p></div>
       <div class="tabs" role="tablist" aria-label="Typ av förslag"><button id="tab-keep" role="tab" aria-selected="true" aria-controls="theme-panel" data-category="keep">Det vi vill behålla <span>3 teman</span></button><button id="tab-develop" role="tab" aria-selected="false" aria-controls="theme-panel" tabindex="-1" data-category="develop">Det vi vill utveckla <span>3 teman</span></button></div>
-      <div id="theme-panel" role="tabpanel" aria-labelledby="tab-keep" tabindex="0"><div class="theme-grid" id="theme-grid"></div></div>
+      <div id="theme-panel" role="tabpanel" aria-labelledby="tab-keep" tabindex="0"><div class="theme-grid" id="theme-grid"></div>
+        <section id="konkreta-steg" class="action-section" aria-labelledby="action-title" hidden>
+          <div class="section-heading"><div><p class="eyebrow">NYTT I VERSION 2 · FÖRSLAG ATT TA STÄLLNING TILL</p><h2 id="action-title">Tre konkreta sätt<br>att gå vidare.</h2></div><p>Komplement till er handledning en dag i veckan. Här finns steg att pröva tillsammans i den vanliga arbetsvardagen.</p></div>
+          <p class="action-intro">Det här är nya förslag till arbetssätt, framtagna för er diskussion. De ingår inte i medarbetarnas originalinspel och är ännu inte beslutade. Tider och uppföljningsintervall är exempel som ni kan anpassa.</p>
+          <div id="action-list"></div>
+          <div class="action-start"><h3>Så kan ni börja på nästa APT</h3><p>Välj vilket arbetssätt ni vill börja med. Skriv in åtgärd, ansvarig chef, vad medarbetarna bidrar med, avsatt arbetstid och datum för uppföljning i er ordinarie handlingsplan. Involvera skyddsombudet och pröva upplägget i fyra veckor. Risker som kräver omedelbar åtgärd hanteras direkt.</p><p>Arbetsgivaren ansvarar för åtgärder och förutsättningar. Medarbetarna medverkar med erfarenheter, prövar arbetssätten och återkopplar hur de fungerar.</p><button id="present-actions" class="button dark">Presentera de tre arbetssätten</button></div>
+          <p class="section-note">Arbetssätten bygger på en praktisk tillämpning av <a href="https://www.av.se/halsa-och-sakerhet/organisatorisk-och-social-arbetsmiljo/" target="_blank" rel="noopener noreferrer">Arbetsmiljöverkets vägledning</a> och <a href="https://friskfaktorlabbet.suntarbetsliv.se/faktorundersokning/prioritering-av-arbetsuppgifter/" target="_blank" rel="noopener noreferrer">Suntarbetslivs stöd för prioritering</a>. Källor kontrollerade 6 oktober 2026. De lokala uppläggen och exemplen är förslag, inte färdiga metoder som har utvärderats hos er.</p>
+        </section>
+      </div>
       <p class="section-note">Öppna ett tema för att läsa förslagen och se svarsfördelningen i enkäten.</p></div>
     </section>
     <section class="wrap voices" id="inspel" aria-labelledby="voices-title"><div class="section-heading"><div><p class="eyebrow">ALLA INSPEL</p><h2 id="voices-title">Flera perspektiv.<br>Ett gemensamt samtal.</h2></div><p>Här finns de fem textavsnitten med förslag i Wordunderlaget. Numreringen följer dokumentets ordning och anger inte arbetsgrupper eller antal röster.</p></div><div id="voices-list"></div></section>
     <section class="next-section"><div class="wrap next-inner"><div><p class="eyebrow">NÄSTA STEG</p><h2>Enas om vad vi<br>tar vidare.</h2></div><div><p>Utgå från förslagen och välj tillsammans tre områden att behålla och tre att utveckla.</p><p class="muted">Underlaget innehåller ännu inget gemensamt beslut om vilka områden som ska väljas.</p><button class="button dark" id="present-bottom">Visa som presentation</button></div></div></section>
     <section class="wrap sources" id="underlag"><h2>Om underlaget</h2><div class="sources-grid"><div><h3>Två underlag</h3><p><cite>Medarbetarenkät 2026 – Arbete & integration</cite>, 59 sidor, och <cite>medarbetarnas förslag</cite> i Word. Sidhänvisningarna i diagrammen avser enkätens PDF.</p></div><div><h3>Så läser du resultaten</h3><p>Diagrammen visar antal svar 2026 för frågor som hör till förslagen. De flesta har 11 svar; frågan om ansvarsfördelning har 10. Svaren är upplevelser, inte uppgifter om antal inträffade händelser.</p></div><div><h3>Så är sidan sammanställd</h3><p>Temarubriker och korta sammanfattningar har lagts till för läsbarhet. Originalformuleringarna finns under Alla inspel. Personnamn, kontaktuppgifter, könsuppdelning och originalfiler publiceras inte här.</p></div></div></section>
   </main>
-  <footer class="wrap footer"><span>Arbete & integration · IFO</span><span>Sammanställt 6 oktober 2026 · Version 1.0</span></footer>
+  <footer class="wrap footer"><span>Arbete & integration · IFO</span><span>Uppdaterat 6 oktober 2026 · Version 2.0</span></footer>
   <dialog id="theme-dialog" aria-labelledby="detail-title"><div class="dialog-top"><span id="detail-label" class="eyebrow"></span><button class="icon-button" id="close-detail" aria-label="Stäng tema">✕</button></div><div id="detail-content"></div></dialog>
   <dialog id="presentation" aria-labelledby="slide-title"><div class="presentation-top"><span>ARBETE & INTEGRATION · 2026</span><button class="button light compact" id="exit-presentation">Stäng presentation</button></div><div id="slide-content" class="slide-content"></div><div class="presentation-bottom"><button class="button light" id="prev-slide">Föregående</button><span id="slide-counter" aria-live="polite"></span><button class="button mint" id="next-slide">Nästa</button></div><div class="slide-progress" aria-hidden="true"><span id="slide-progress"></span></div></dialog>
   <noscript><p class="wrap">Aktivera JavaScript för att läsa alla förslag, öppna teman och använda presentationen.</p></noscript>
